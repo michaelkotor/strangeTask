@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileUtil {
-    public static List<List<String>> readContentOfFile(String fileName) {
+    public List<List<String>> readContentOfFile(String fileName) {
         List<List<String>> records = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;
@@ -32,7 +32,7 @@ public class FileUtil {
         return records;
     }
 
-    public static void writeContentToFile(String fileName, List<List<String>> content) {
+    public void writeContentToFile(String fileName, List<List<String>> content) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))) {
             for(int i = 0 ; i < content.size(); i++) {
                 for(int j = 0; j < content.get(0).size(); j++) {

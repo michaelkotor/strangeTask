@@ -6,10 +6,11 @@ import com.kotor.util.FileUtil;
 import java.util.List;
 
 public class Instruction {
-    private final SortService sortService = new SortService();
+    private SortService sortService = new SortService();
+    private FileUtil fileUtil = new FileUtil();
 
     public void execute() {
-        List<List<String>> records = FileUtil.readContentOfFile("in.txt");
+        List<List<String>> records = fileUtil.readContentOfFile("in.txt");
 
         sortService.printContent(records);
 
@@ -21,6 +22,6 @@ public class Instruction {
 
         sortService.printContent(result);
 
-        FileUtil.writeContentToFile("out.txt", result);
+        fileUtil.writeContentToFile("out.txt", result);
     }
 }
