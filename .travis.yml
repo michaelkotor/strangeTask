@@ -5,7 +5,7 @@ sudo: required
 services:
   - docker
 before_script:
-  - mvn clean vefiry
+  - mvn dependency:resolve
   - mvn test
   - mvn clean install
 script:
