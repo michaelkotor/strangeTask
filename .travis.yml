@@ -1,0 +1,15 @@
+language: java
+java:
+  - "8"
+sudo: required
+services:
+  - docker
+before_script:
+  - mvn clean vefiry
+  - mvn test
+  - mvn clean install
+script:
+  - docker build -t task .
+
+
+
